@@ -1,0 +1,21 @@
+spring:
+  data:
+    rest:
+      base-path: /api
+  datasource:
+    ## default connection pool
+    hikari:
+      connection-timeout: 10000
+      maximum-pool-size: 5
+      # spring.jpa.properties.hibernate.default_schema=techwriting
+      schema: techwriting
+    ## PostgreSQL
+    url: jdbc:postgresql://172.17.0.2:5432/postgres
+    username: postgres
+    password: mysecretpassword
+  jpa:
+    generate-ddl: false
+    hibernate:
+      # drop n create table again, good for testing, comment this in production
+      ddl-auto: create
+

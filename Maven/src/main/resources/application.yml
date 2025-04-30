@@ -1,0 +1,50 @@
+spring:
+  data:
+    rest:
+      base-path: /api
+  datasource:
+    hikari:
+      connection-timeout: 10000
+      maximum-pool-size: 1
+    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE
+    username: root
+    password:
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  servlet:
+    context-path: /foo
+
+springdoc:
+  show-login-endpoint: false
+  remove-broken-reference-definitions: false
+  writer-with-default-pretty-printer: true
+  cache:
+    disabled: true
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    url: /v3/api-docs.yaml
+    path: /swagger-ui.html
+    layout: BaseLayout
+    doc-expansion: none
+    tags-sorter: alpha
+    operations-sorter: alpha
+    disable-swagger-default-url: true
+    supported-submit-methods: get,put,post,delete,options,head,patch,trace
+    csrf:
+      enabled: true
+
+
+logging:
+  level:
+    org:
+      apache:
+        tomcat: INFO
+        util:
+          net: WARN

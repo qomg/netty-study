@@ -1,0 +1,6 @@
+.swagger-codegen-ignore
+.swagger-codegen
+.DS_Store
+*.md
+!README.md
+index.html
